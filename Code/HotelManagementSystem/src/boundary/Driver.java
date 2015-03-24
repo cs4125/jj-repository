@@ -1,5 +1,5 @@
 package boundary;
-
+import entity.DataBase;
 import controlpkge.ControlClass;
 
 import javax.swing.*;
@@ -15,6 +15,8 @@ public class Driver extends JFrame {
     JPanel panel = new JPanel();
     JTextField txtUser = new JTextField(15);
     JPasswordField txtPass = new JPasswordField(15);
+
+    DataBase dataBase = new DataBase();
 
     Driver(){
         super("Login Menu");
@@ -42,7 +44,9 @@ public class Driver extends JFrame {
             public void actionPerformed(ActionEvent ae) {
                 String username = txtUser.getText();
                 String password = txtPass.getText();
-                if (username.equals("jim") && password.equals("123")) {
+                //must equal user in the database
+                // if not redirect to register page after 3 attempts
+                if (username.equals(dataBase.searchArrayList(0, username)) && password.equals(dataBase.searchArrayList(1, username))) {
                     WelcomePage regFace = new WelcomePage();
 
                     // call public Control constructor

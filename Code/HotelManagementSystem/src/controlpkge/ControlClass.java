@@ -26,7 +26,7 @@ public class ControlClass { // apply loginInterface
 
     private boolean comparePasswords(String username) {
         // set isValidUser
-        DataBase db = new DataBase(username);
+        DataBase db = new DataBase();
         String dbPassword = db.getPassword(username);
         if (dbPassword != null) {
             if (dbPassword.equals(password)) {
