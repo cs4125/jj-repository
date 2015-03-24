@@ -1,6 +1,6 @@
 package entity;
 
-import control.Control;
+import controlpkge.ControlClass;
 
 /**
  * Created by Ross on 23/03/2015.

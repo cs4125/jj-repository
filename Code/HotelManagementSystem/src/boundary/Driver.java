@@ -1,12 +1,14 @@
 package boundary;
 
+import controlpkge.ControlClass;
+
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Driver extends JFrame {
 
     public static void main(String[] args) {
-        Driver frameTabel = new Driver();
+        Driver frameTable = new Driver();
     }
 
     JButton btnLogin = new JButton("Login");
@@ -38,10 +40,16 @@ public class Driver extends JFrame {
     public void actionLogin(){
         btnLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                String puname = txtUser.getText();
-                String ppaswd = txtPass.getText();
-                if (puname.equals("test") && ppaswd.equals("12345")) {
+                String username = txtUser.getText();
+                String password = txtPass.getText();
+                if (username.equals("jim") && password.equals("123")) {
                     WelcomePage regFace = new WelcomePage();
+
+                    // call public Control constructor
+                    ControlClass bControl;
+
+                    // login passed to Control constructor
+                    bControl = new ControlClass(username, password);
                     regFace.setVisible(true);
                     dispose();
                 } else {
@@ -51,7 +59,6 @@ public class Driver extends JFrame {
                     txtPass.setText("");
                     txtUser.requestFocus();
                 }
-
             }
         });
     }
