@@ -1,16 +1,20 @@
 package entity;
 
-import controlpkge.ControlClass;
-
 /**
- * Created by Ross on 23/03/2015.
+ * Created by Ross on 24/03/2015.
  */
-public class User {
+public abstract class User {
 
     private String username;
     private String password;
     private String userType;
 
+    public User(String username, String password, String userType)
+    {
+        this.username = username;
+        this.password = password;
+        this.userType = userType;
+    }
 
     public String getUsername() {
         return username;
@@ -20,22 +24,19 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword(String username) {
-        // goto db and get password for username
+    public String getPassword() {
         return password;
-    }
-
-    public String getUserType() {
-        // goto db and get userType for username
-        return userType;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getBrowseRooms()
-    {
-        return null;
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

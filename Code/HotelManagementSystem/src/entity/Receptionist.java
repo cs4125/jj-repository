@@ -1,13 +1,12 @@
 package entity;
 
 /**
- * Created by Ross on 23/03/2015.
+ * Created by Ross on 24/03/2015.
  */
-public class Receptionist extends User {
+public class Receptionist extends User
+{
 
-    String getIssueInvoice()
-    {
-        return null;
+    public Receptionist(String username, String password, String userType) {
+        super(username, password, userType);
     }
-
 }

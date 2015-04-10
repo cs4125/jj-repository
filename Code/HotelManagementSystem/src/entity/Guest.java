@@ -1,23 +1,47 @@
 package entity;
 
 /**
- * Created by Ross on 23/03/2015.
+ * Created by Ross on 24/03/2015.
  */
-public class Guest extends User {
+public class Guest extends User
+{
+    private String passportNumber;
+    private String address;
+    private String telephone;
 
-    String getEditReservation()
-    {
-        return null;
+    public Guest(String username, String password, String userType) {
+        super(username, password, userType);
     }
 
-    String getDeleteReservation()
+    public Guest(String username, String password, String userType, String passportNumber, String address, String telephone)
     {
-        return null;
+        super(username, password, userType);
+        this.passportNumber = passportNumber;
+        this.address = address;
+        this.telephone = telephone;
     }
 
-    String getMakeReservation()
-    {
-        return null;
+    public String getPassportNumber() {
+        return passportNumber;
     }
 
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 }

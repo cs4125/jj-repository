@@ -1,12 +1,12 @@
 package entity;
 
 /**
- * Created by Ross on 23/03/2015.
+ * Created by Ross on 24/03/2015.
  */
-public class Manager extends User {
+public class Manager extends User
+{
 
-    String getDeleteUser()
-    {
-        return null;
+    public Manager(String username, String password, String userType) {
+        super(username, password, userType);
     }
 }
